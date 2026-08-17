@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lead-detail.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <a href="dashboard.html" class="brand-link"><span class="brand-mark">—</span><span class="brand-name">LEDGER</span></a>
+  </div>
+  <div class="topbar-right">
+    <div class="user-chip">
+      <span class="avatar" id="userAvatar"></span>
+      <span class="user-email" id="userEmail"></span>
+    </div>
+    <button class="btn-ghost" id="signOutBtn"><span class="btn-fill"></span><span class="btn-label">Sign out</span></button>
+  </div>
+</header>
+
+<main class="detail-wrap">
+  <a href="dashboard.html" class="back-link">&larr; Back to pipeline</a>
+
+  <div class="detail-grid">
+
+    <section class="panel">
+      <div class="panel-head">
+        <h1 id="leadNameDisplay">Loading…</h1>
+        <select id="statusSelect">
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="follow-up">Follow-up</option>
+          <option value="interested">Interested</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
+
+      <form id="leadForm">
+        <label>Name<input type="text" id="leadName" required></label>
+        <label>Company<input type="text" id="leadCompany"></label>
+        <label>Email<input type="email" id="leadEmail"></label>
+        <label>Phone<input type="text" id="leadPhone"></label>
+        <label>Source<input type="text" id="leadSource"></label>
+        <label>Notes<textarea id="leadNotes" rows="4"></textarea></label>
+
+        <div class="panel-actions">
+          <button type="button" class="btn-danger" id="deleteLeadBtn"><span class="btn-fill"></span><span class="btn-label">Delete lead</span></button>
+          <button type="submit" class="btn-primary"><span class="btn-fill"></span><span class="btn-label">Save changes</span></button>
+        </div>
+        <p class="form-msg" id="formMsg"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Activity log</h2>
+
+      <form id="activityForm" class="activity-form">
+        <select id="activityType">
+          <option value="call">Call</option>
+          <option value="email">Email</option>
+          <option value="meeting">Meeting</option>
+          <option value="note">Note</option>
+        </select>
+        <textarea id="activityDesc" rows="2" placeholder="What happened?" required></textarea>
+        <button type="submit" class="btn-primary btn-small"><span class="btn-fill"></span><span class="btn-label">Log activity</span></button>
+      </form>
+
+      <div class="activity-list" id="activityList"></div>
+    </section>
+
+  </div>
+</main>
+
+<script type="module" src="lead-detail.js"></script>
+</body>
+</html>

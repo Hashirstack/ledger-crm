@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — Stats</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stats.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <a href="dashboard.html" class="brand-link"><span class="brand-mark">—</span><span class="brand-name">LEDGER</span></a>
+  </div>
+  <div class="topbar-right">
+    <div class="user-chip">
+      <span class="avatar" id="userAvatar"></span>
+      <span class="user-email" id="userEmail"></span>
+    </div>
+    <button class="btn-ghost" id="signOutBtn"><span class="btn-fill"></span><span class="btn-label">Sign out</span></button>
+  </div>
+</header>
+
+<main class="stats-wrap">
+  <a href="dashboard.html" class="back-link">&larr; Back to pipeline</a>
+  <h1>Overview</h1>
+
+  <div class="summary-row" id="summaryRow"></div>
+
+  <div class="stats-grid">
+    <section class="panel">
+      <h2>By stage</h2>
+      <div class="bar-list" id="stageBars"></div>
+    </section>
+
+    <section class="panel">
+      <h2>By source</h2>
+      <div class="bar-list" id="sourceBars"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2>Recent activity</h2>
+    <div class="recent-list" id="recentList"></div>
+  </section>
+</main>
+
+<script type="module" src="stats.js"></script>
+</body>
+</html>

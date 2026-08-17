@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <a href="dashboard.html" class="brand-link"><span class="brand-mark">—</span><span class="brand-name">LEDGER</span></a>
+  </div>
+  <div class="topbar-right">
+    <div class="user-chip">
+      <span class="avatar" id="userAvatar"></span>
+      <span class="user-email" id="userEmail"></span>
+    </div>
+    <button class="btn-ghost" id="signOutBtn"><span class="btn-fill"></span><span class="btn-label">Sign out</span></button>
+  </div>
+</header>
+
+<main class="board-wrap">
+  <div class="board-heading">
+    <h1>Pipeline</h1>
+    <div class="heading-actions">
+      <a href="stats.html" class="btn-ghost"><span class="btn-fill"></span><span class="btn-label">Stats</span></a>
+      <button class="btn-primary" id="addLeadBtn"><span class="btn-fill"></span><span class="btn-label">+ New lead</span></button>
+    </div>
+  </div>
+
+  <div class="board" id="board">
+    <section class="column" data-status="new">
+      <div class="column-head"><span class="dot dot-new"></span>New<span class="count" id="count-new">0</span></div>
+      <div class="cards" id="cards-new"></div>
+    </section>
+    <section class="column" data-status="contacted">
+      <div class="column-head"><span class="dot dot-contacted"></span>Contacted<span class="count" id="count-contacted">0</span></div>
+      <div class="cards" id="cards-contacted"></div>
+    </section>
+    <section class="column" data-status="follow-up">
+      <div class="column-head"><span class="dot dot-followup"></span>Follow-up<span class="count" id="count-follow-up">0</span></div>
+      <div class="cards" id="cards-follow-up"></div>
+    </section>
+    <section class="column" data-status="interested">
+      <div class="column-head"><span class="dot dot-interested"></span>Interested<span class="count" id="count-interested">0</span></div>
+      <div class="cards" id="cards-interested"></div>
+    </section>
+    <section class="column" data-status="closed">
+      <div class="column-head"><span class="dot dot-closed"></span>Closed<span class="count" id="count-closed">0</span></div>
+      <div class="cards" id="cards-closed"></div>
+    </section>
+  </div>
+</main>
+
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <h2>New lead</h2>
+    <form id="addLeadForm">
+      <label>Name<input type="text" id="leadName" required></label>
+      <label>Company<input type="text" id="leadCompany"></label>
+      <label>Email<input type="email" id="leadEmail"></label>
+      <label>Phone<input type="text" id="leadPhone"></label>
+      <label>Source<input type="text" id="leadSource" placeholder="Referral, LinkedIn, cold email…"></label>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="cancelAddBtn"><span class="btn-fill"></span><span class="btn-label">Cancel</span></button>
+        <button type="submit" class="btn-primary"><span class="btn-fill"></span><span class="btn-label">Add lead</span></button>
+      </div>
+      <p class="modal-msg" id="addLeadMsg"></p>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>
