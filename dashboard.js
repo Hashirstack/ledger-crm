@@ -139,8 +139,16 @@ document.querySelectorAll('.btn-ghost').forEach(b => wireSweepButton(b, '#161616
 // Add lead modal
 const modal = document.getElementById('addModal');
 document.getElementById('addLeadBtn').addEventListener('click', () => modal.classList.add('open'));
-document.getElementById('cancelAddBtn').addEventListener('click', () => modal.classList.remove('open'));
-modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+function closeModal() {
+  modal.classList.add('closing');
+  modal.classList.remove('open');
+  setTimeout(() => {
+    modal.classList.remove('closing');
+  }, 200);
+}
+
+document.getElementById('cancelAddBtn').addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
 document.getElementById('addLeadForm').addEventListener('submit', async (e) => {
   e.preventDefault();
