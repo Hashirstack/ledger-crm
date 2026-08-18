@@ -271,6 +271,7 @@ body {
   animation: overlayFadeIn 0.25s ease-out;
 }
 .modal-overlay.closing {
+  display: flex;
   animation: overlayFadeOut 0.2s ease-in forwards;
 }
 .modal-overlay.open .modal {
