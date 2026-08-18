@@ -254,7 +254,23 @@ body {
 }
 .modal-msg.error { color: var(--crimson-bright); }
 .modal-msg.success { color: var(--sand); }
-
 @media (max-width: 900px) {
   .board { grid-template-columns: 1fr; }
+}
+.modal-overlay.open {
+  animation: overlayFadeIn 0.25s ease-out;
+}
+
+.modal-overlay.open .modal {
+  animation: modalRiseIn 0.35s cubic-bezier(0.65,0,0.35,1);
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalRiseIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
